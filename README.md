@@ -1,11 +1,20 @@
 # Terraform Reference Architecture for AWS
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > **Warning**:
 > This code is provided as-is — it is not meant to be executed verbatim. No support is provided in any way.
 
 ## Introduction
 
-TODO: Add introduction in README.
+This is a very basic implementation of a Terraform codebase for infrastructure on AWS. Because this codebase acts as an example, everything is left as generic and default as possible. The only thing that can potentially be called opinionated is the file/folder structure.
+
+The folder structure is set up with a few goals in mind:
+
+- Each part of the infrastructure is its own module in the `modules` folder;
+- Each environment is separated in the `environments` folder with their own default tags;
+- Each part of an environment gets its own statefile as to reduce the blast radius;
+- In order to not repeat myself, symlinks of the `provider.tf` file are created in places where it's needed.
 
 ## Getting started
 
@@ -30,6 +39,8 @@ tf apply
 ```
 
 Terraform will ask to name the new S3 bucket where the statefile will be stored. Further information can be found in `modules/state/README.md`.
+
+After this initial setup you can delete the `modules/state/.terraform` folder.
 
 ## Security groups
 
