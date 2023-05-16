@@ -11,7 +11,7 @@ module "admin_sg" {
       to_port     = 22
       protocol    = "tcp"
       description = "Allow SSH"
-      cidr_blocks = module.vpc.vpc_cidr
+      cidr_blocks = module.vpc.vpc_cidr_block
     }
   ]
 

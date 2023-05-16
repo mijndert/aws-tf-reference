@@ -2,7 +2,6 @@ module "sns_topic" {
   source  = "terraform-aws-modules/sns/aws"
   version = "~> 3.0"
 
-  kms_master_key_id = var.kms_key_id
   name              = var.topicname
 }
 

@@ -15,9 +15,10 @@ module "vpc" {
   enable_dns_hostnames = true
   enable_dns_support   = true
 
-  enable_ipv6                                    = true
-  assign_ipv6_address_on_creation                = true
-  private_subnet_assign_ipv6_address_on_creation = true
+  enable_ipv6                                     = true
+  database_subnet_assign_ipv6_address_on_creation = true
+  public_subnet_assign_ipv6_address_on_creation   = true
+  private_subnet_assign_ipv6_address_on_creation  = true
 
   public_subnet_ipv6_prefixes   = [0, 1, 2]
   private_subnet_ipv6_prefixes  = [3, 4, 5]

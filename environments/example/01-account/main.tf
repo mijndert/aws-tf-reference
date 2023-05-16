@@ -1,9 +1,9 @@
 module "account" {
   source = "../../../modules/account"
 
-  environment = "example"
+  topicname = "example-topic"
 
-  alerting_email_subscriptions = [
+  email_subscriptions = [
     "example@example.com"
   ]
 }
