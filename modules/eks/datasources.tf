@@ -25,11 +25,3 @@ data "aws_subnets" "public" {
     Name = "*public*"
   }
 }
-
-# data "aws_eks_cluster" "cluster" {
-#   name = module.eks.cluster_name
-# }
-
-# data "aws_eks_cluster_auth" "cluster" {
-#   name = module.eks.cluster_name
-# }
