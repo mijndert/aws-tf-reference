@@ -10,4 +10,3 @@ variable "public_subnets" {
 variable "database_subnets" {
   type = list(string)
 }
-

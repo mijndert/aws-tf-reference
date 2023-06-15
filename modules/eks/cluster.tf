@@ -8,7 +8,7 @@ module "eks" {
 
   cluster_endpoint_public_access = true
 
-  vpc_id     = data.aws_vpc.selected.id
+  vpc_id     = var.vpc_id
   subnet_ids = data.aws_subnets.private.ids
 
   create_cni_ipv6_iam_policy = true
@@ -27,11 +27,11 @@ module "eks" {
 
   eks_managed_node_groups = {
     initial = {
-      instance_types = ["m5.large"]
+      instance_types = ["t3.small"]
 
       min_size     = 1
       max_size     = 5
-      desired_size = 2
+      desired_size = 1
     }
   }
 }
