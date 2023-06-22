@@ -61,3 +61,9 @@ This returns the ID of the security group:
 ```
 security_groups = [ data.aws_security_group.this.id ]
 ```
+
+### Atlantis setup
+
+To automate planning and applying your terraform code, we can use [Atlantis](https://www.runatlantis.io/). An example repo-side atlantis.yaml file has been provided in this repo, and any best practices concerning the server-side setup can be found in [this accompanying repo](https://github.com/MichielVanDerWinden/atlantis-tf-reference).
+
+Following this setup, your terraform infrastructure can be easily, securely and quickly deployed to all your AWS accounts from your own Github (or other VCS) infra repo.

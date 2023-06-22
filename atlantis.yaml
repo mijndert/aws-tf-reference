@@ -1,0 +1,41 @@
+version: 3
+
+projects:
+  # Contains all defaults for every project.
+  - &project_defaults
+    # `dir` is a required field so we just fill it with dummy data.
+    # Overwrite this field in each of your projects.
+    dir: DUMMY_DIR
+    autoplan:
+      when_modified: ["./**/*.tf"]
+      enabled: true
+
+  # -- Actual project setup -- #
+  # environments/example
+  - <<: *project_defaults
+    name: example-00-shared
+    dir: environments/example/00-shared
+    autoplan:
+      when_modified:
+        - "./**/*.tf"
+        - "../../../modules/account/*.tf"
+        - "../../../modules/rds-mysql/*.tf"
+        - "../../../modules/vpc/*.tf"
+        
+  - <<: *project_defaults
+    name: example-01-backend
+    dir: environments/example/01-backend
+    autoplan:
+      when_modified:
+        - "./**/*.tf"
+        - "../../../modules/ecr/*.tf"
+        - "../../../modules/eks/*.tf"
+
+  - <<: *project_defaults
+    name: example-02-frontend
+    dir: environments/example/02-frontend
+    autoplan:
+      when_modified:
+        - "./**/*.tf"
+        - "../../../modules/ecr/*.tf"
+        - "../../../modules/eks/*.tf"
