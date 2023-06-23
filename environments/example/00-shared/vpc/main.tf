@@ -8,7 +8,7 @@ module "vpc" {
   public_subnets   = ["10.250.19.0/24", "10.250.20.0/24", "10.250.21.0/24"]
   database_subnets = ["10.250.22.0/23", "10.250.24.0/23", "10.250.26.0/23"]
 
-  environment = var.environment
+  environment = "example"
 }
 
 output "vpc_id" {
