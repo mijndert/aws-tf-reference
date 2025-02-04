@@ -1,4 +1,5 @@
 variable "aws_region" {
-  default = "eu-west-1"
+  default = "eu-central-1"
 }
+
 variable "bucketname" {}

@@ -7,14 +7,7 @@
 
 ## Introduction
 
-This is a very basic implementation of a Terraform codebase for infrastructure on AWS. Because this codebase acts as an example, everything is left as generic and default as possible. The only thing that can potentially be called opinionated is the file/folder structure.
-
-The folder structure is set up with a few goals in mind:
-
-- Each part of the infrastructure is its own module in the `modules` folder;
-- Each environment is separated in the `environments` folder with their own default tags;
-- Each part of an environment gets its own statefile as to reduce the blast radius;
-- In order to not repeat myself, symlinks of the `provider.tf` file are created in places where it's needed.
+TODO: Fill out the introduction where I go over the purpose of this repository and the file structure.
 
 ## Getting started
 
@@ -33,18 +26,12 @@ alias tf="terraform"
 Before you can start working with setting up environments using Terraform you have to set up everything needed for state management. This is a one time process for each new AWS account.
 
 ```
-cd modules/state
+cd remote-state
 tf init
 tf apply
 ```
 
-Terraform will ask to name the new S3 bucket where the statefile will be stored. Further information can be found in `modules/state/README.md`.
-
-After this initial setup you can delete the `modules/state/.terraform` folder.
-
 ## Security groups
-
-Security Groups are defined within the VPC module because this makes it easier to reference them into each other and tighten security.
 
 Each VPC has a `Name` tag associated which is used in datasources inside of other modules.
 
