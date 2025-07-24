@@ -1,4 +1,4 @@
-# Terraform Reference Architecture for AWS
+# Reference Architecture for AWS
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

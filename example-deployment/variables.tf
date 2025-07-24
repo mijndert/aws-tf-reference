@@ -1,9 +1,16 @@
 variable "aws_region" {
-  default = "eu-central-1"
+  description = "The AWS region to use"
+  default     = "eu-central-1"
+}
+
+variable "environment" {
+  description = "The environment to deploy to (e.g. production)"
+  default     = "production"
 }
 
 variable "state_bucket_name" {
   description = "Name of the S3 bucket for the Terraform statefile"
+  default     = "aws-tf-reference-terraform-state"
 }
 
 variable "vpc_name" {

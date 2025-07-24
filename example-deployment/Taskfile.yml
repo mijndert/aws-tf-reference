@@ -7,22 +7,22 @@ env:
 tasks:
   init:
     cmds:
-      - terraform init -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars" -reconfigure
+      - tofu init -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars" -reconfigure
     internal: true
 
   plan:
     deps: [init]
     cmds:
-      - terraform plan -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+      - tofu plan -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
 
   apply:
     deps: [init]
     cmds:
-      - terraform apply -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+      - tofu apply -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
 
   destroy:
     deps: [init]
     cmds:
-      - terraform destroy -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+      - tofu destroy -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
 
 
