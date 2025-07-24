@@ -1,3 +1,6 @@
+// This Terraform code will create a VPC with public, private, and intra subnets.
+// The VPC will be configured with NAT gateways and subnet tags for Kubernetes.
+
 locals {
   vpc_cidr = var.vpc_cidr
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
@@ -5,7 +8,7 @@ locals {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "5.18.1"
+  version = "~> 6.0"
 
   name = var.vpc_name
   cidr = local.vpc_cidr

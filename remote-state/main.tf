@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = var.bucketname
+  bucket = var.bucket_name
 
   lifecycle {
     prevent_destroy = true
@@ -38,16 +38,5 @@ resource "aws_s3_bucket_ownership_controls" "terraform_state" {
 
   rule {
     object_ownership = "BucketOwnerEnforced"
-  }
-}
-
-resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "terraform-locks"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "LockID"
-
-  attribute {
-    name = "LockID"
-    type = "S"
   }
 }

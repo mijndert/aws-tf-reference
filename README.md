@@ -21,7 +21,7 @@ To make life a little easier you can add this alias in whatever shell configurat
 alias tf="terraform"
 ```
 
-### Setting up statefile management
+### Setting up the statefile 
 
 Before you can start working with setting up environments using Terraform you have to set up everything needed for state management. This is a one time process for each new AWS account.
 
