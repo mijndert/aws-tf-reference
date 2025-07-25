@@ -1,0 +1,28 @@
+version: "3"
+
+env:
+  ENV: production
+  CONFIG_PATH: ./config
+
+tasks:
+  init:
+    cmds:
+      - tofu init -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars" -reconfigure
+    internal: true
+
+  plan:
+    deps: [init]
+    cmds:
+      - tofu plan -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+  apply:
+    deps: [init]
+    cmds:
+      - tofu apply -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+  destroy:
+    deps: [init]
+    cmds:
+      - tofu destroy -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+

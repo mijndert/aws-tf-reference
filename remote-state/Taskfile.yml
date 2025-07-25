@@ -1,0 +1,28 @@
+version: "3"
+
+env:
+  ENV: production
+  CONFIG_PATH: ./config
+
+tasks:
+  init:
+    cmds:
+      - tofu init
+    internal: true
+
+  plan:
+    deps: [init]
+    cmds:
+      - tofu plan
+
+  apply:
+    deps: [init]
+    cmds:
+      - tofu apply
+
+  destroy:
+    deps: [init]
+    cmds:
+      - tofu destroy
+
+
