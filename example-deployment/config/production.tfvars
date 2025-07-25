@@ -1,3 +1,5 @@
+// Even though a few of these variables have defaults set, I'm setting them explicitly here to ensure clarity.
+
 environment = "production"
 
 state_bucket_name = "aws-tf-reference-terraform-state"
