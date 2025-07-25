@@ -122,7 +122,6 @@ This will:
 For production deployments, consider:
 - Adding HTTPS/TLS termination
 - Implementing proper health checks
-- Adding resource limits and requests
 - Setting up horizontal pod autoscaling
 - Implementing proper logging and monitoring
 - Adding security contexts and network policies
